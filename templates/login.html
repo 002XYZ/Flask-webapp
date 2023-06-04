@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %}
+
+{% block content %}
+<!-- We don't really need these at the moment, these are something we can do here -->
+    <!-- <h1>This is Login page</h1> -->
+    <!-- {% if bcd==True %} Can write python code, if else block like this -->
+        <!-- Yes, true! -->
+    <!-- {% else %} -->
+        <!-- No, not true! -->
+    <!-- {% endif %} -->
+
+    <!-- {{abc}}  Double brackets for using the variable passed in render_template in auth.py -->
+             <!--It will just show under whatever the if block prints-->
+
+    <form method="POST"> <!-- creating a form that will send a post request to the backend-->
+        <h3 align="center">Sign Up</h3>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                placeholder="Enter email"
+            /> <!-- name is important becuase when we pass this-->
+               <!-- info to backend, this is what it it's going to be called -->
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="firstName" 
+                name="firstName" 
+                placeholder="Enter first name"
+            />
+        </div>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input 
+                type="password" 
+                class="form-control" 
+                id="password1" 
+                name="password1" 
+                placeholder="Enter Password"
+            />
+        </div>
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input 
+                type="password" 
+                class="form-control" 
+                id="password2" 
+                name="password2" 
+                placeholder="Confirm Password"
+            />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Now remember, these bootstrap classes (btn btn-primary ...) are working 
+        because in base.html all the bootstrap links and scripts are written -->
+    </form>
+{% endblock %}
